@@ -1,0 +1,33 @@
+﻿@model TravelTripProject.Models.Sınıflar.Blog
+@{
+    ViewBag.Title = "AddBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<form method="post" class="form-group col-lg-11">
+    <h2>Yeni Blog Ekleme Formu</h2>
+    <br />
+    @Html.LabelFor(x => x.Baslik)
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ImageUrl)
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    <label>
+        <input type="checkbox" checked autocomplete="on"> Favorilere Ekle
+    </label>
+    <br />
+    <br />
+
+    <button class="btn btn-primary" type="submit">Kaydet</button>
+
+</form>
+

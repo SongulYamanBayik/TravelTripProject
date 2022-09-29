@@ -1,5 +1,4 @@
-﻿@using TravelTripProject.Models.Sınıflar
-@model List<Blog>
+﻿@model TravelTripProject.Models.Sınıflar.BlogYorum
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -35,14 +34,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-               @foreach (var item in Model)
+               @foreach (var item in Model.Deger1)
                {
                 <div class="single-grid">
-                    <img src="@item.ImageUrl" alt="" style="margin-bottom:20px"/>
+                    <img src="@item.ImageUrl" alt="" style="margin-bottom:20px" />
                     <a href="/Blog/BlogDetay/@item.ID">@item.Baslik</a>
                     <p>
-                        @item.Aciklama
+                        @item.Aciklama.Substring(0, 400)
                     </p>
+                    <p><a href="/Blog/BlogDetay/@item.ID"><span class="read">Devamını Oku</span></a></p>
                 </div>
                 <br /><br />
                }
@@ -52,10 +52,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="recent">
                     <h3>Son Yazılar</h3>
                     <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
+                        @foreach (var item2 in Model.Deger3)
+                        {
+                            <li><a href="/Blog/BlogDetay/@item2.ID">@item2.Baslik</a></li>
+                        }
+
                     </ul>
                 </div>
                 <div class="comments">

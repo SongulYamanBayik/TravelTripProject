@@ -1,4 +1,5 @@
-﻿
+﻿@using TravelTripProject.Models.Sınıflar
+@model List<Blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -26,7 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="~/Template/web/images/glass.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Restaurants</p>
+                                <p>Restaurantlar</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -35,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="~/Template/web/images/flight.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Flights</p>
+                                <p>Uçuşlar</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -44,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="~/Template/web/images/group.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Things to do</p>
+                                <p>Aktiviteler</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -53,7 +54,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="~/Template/web/images/key.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Vacation Rents</p>
+                                <p>Araç Kiralama</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -63,10 +64,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <div class="slider">
                             <ul class="rslides" id="slider1">
-                                <li><img src="~/Template/web/images/img1.jpg" alt=""></li>
-                                <li><img src="~/Template/web/images/img2.jpg" alt=""></li>
-                                <li><img src="~/Template/web/images/img3.jpg" alt=""></li>
-                                <li><img src="~/Template/web/images/img4.jpg" alt=""></li>
+                                @foreach (var item in Model)
+                                {
+                                    <li><img src="@item.ImageUrl" alt=""></li>
+                                }
+
                             </ul>
                         </div>
                     </div>
@@ -80,10 +82,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="wrap">
             <div class="wrapper">
                 <div class="con-top">
-                    <h3>Welcome to our Travel Company!</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facil</p>
+                    <h3>Tatil Gezi Rehberi Sayfama Hoşgeldiniz!</h3>
+                    <p>Bizimle diyar diyar gezmeye, farklı kültürleri tanımaya hazır mısınız? Yurtiçi gezi turları, yurtdışı gezi turları haricinde dünya mutfakları ile tanışacak ve yöresel yemekler hakkında bilgiler alacaksınız.</p>
+                    <br />
+                    <p>Gezmek çok kolay diye çıktığımız bu yolda gezi vlogları ve yurtdışı eğitim olanakları hakkında bilgi alabilir, vize başvurusu hakkında detaylara ulaşabilirsiniz. Günden güne güncellenen ve her gün bir bilgi ile karşınıza çıkan sayfamız ile yolculuğa hazır olun!</p>
+                    
                 </div>
-                <div class="con-bot">
+                @*<div class="con-bot">
                     <div class="left">
                         <div class="bot-left">
                             <img src="~/Template/web/images/pic.jpg" alt="" />
@@ -119,11 +124,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                     </div>
                     <div class="clear"></div>
-                </div>
+                </div>*@
+
+                @Html.Action("Blog1","Default")
                 <div class="grids">
                     <div class="box1">
                         <div class="padding">
-                            <h4>This Week's Top 10</h4>
+                            <h4>This Week's Top 10</h4> @*son 10 turun listesi olsun burası. ders 26-27*@
                             <ul class="list list-pad">
                                 <li class="list-bg"><span>1.</span><a href="#">formas humanitatis pe</a></li>
                                 <li class="list-bg1"><span>2.</span><a href="#">congue nihil imperdiet</a></li>
@@ -138,55 +145,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </ul>
                             <a href="#" class="link1">See all hotels</a>
                         </div>
-                        <div class="padding1">
-                            <h4>Our Best Places</h4>
-                            <div class="box-left">
-                                <div class="bot-img">
-                                    <img src="~/Template/web/images/pic3.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="bot-img">
-                                    <img src="~/Template/web/images/pic7.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="bot-img">
-                                    <img src="~/Template/web/images/pic8.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="box1-left">
-                                <div class="bot-img">
-                                    <img src="~/Template/web/images/pic9.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc1">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="bot-img">
-                                    <img src="~/Template/web/images/pic10.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc1">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="bot-img">
-                                    <img src="~/Template/web/images/pic3.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc1">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
+                        
+                        @Html.Action("OurBestPlaces1","Default")
+
                         <div class="clear"></div>
                     </div>
                 </div>

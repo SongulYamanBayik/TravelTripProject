@@ -1,5 +1,4 @@
-﻿@using TravelTripProject.Models.Sınıflar
-@model List<Blog>
+﻿@model TravelTripProject.Models.Sınıflar.BlogYorum
 @{
     ViewBag.Title = "BlogDetay";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -25,35 +24,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!----webfonts---->
     <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
-    
+
 
 </head>
 <body>
-   
+
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
                 <div class="single-grid">
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Deger1)
                     {
-                    <img src="@item.ImageUrl" alt="" style="margin-bottom:20px"/>
-                    <h2>@item.Baslik</h2>
-                    <p>
-                        @item.Aciklama 
-                    </p>
+                        <img src="@item.ImageUrl" alt="" style="margin-bottom:20px" />
+                        <h2>@item.Baslik</h2>
+                        <span class="danger">@item.Tarih.ToString("dd.MM.yyyy")</span>
+                        <p>
+                            @item.Aciklama
+                        </p>
                     }
                 </div>
-                    
-                <ul class="comment-list">
-                   
-                    <li>
-                        <img src="~/Template/web2/images/avatar.png" class="img-responsive" alt="">
-                        <div class="desc">
-                            <p>View all posts by: 
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                </ul>
+                @foreach (var item2 in Model.Deger2)
+                {
+                    <ul class="comment-list">
+
+                        <li>
+                            <div class="form-group-lg">
+                                <img src="~/Template/web2/images/avatar.png" class="img-responsive" alt="">
+                                <h3>@item2.KullaniciAdi:</h3>
+                            </div>
+                            <div class="form-group">
+                                <p>@item2.Yorum</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                }
+
                 <div class="content-form">
                     <h3>Yorum Yaz</h3>
                     <form>
@@ -87,7 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="clearfix"></div>
         </div>
     </div>
-    </body>
+</body>
 </html>
 
 

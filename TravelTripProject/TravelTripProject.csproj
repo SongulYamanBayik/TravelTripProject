@@ -128,16 +128,22 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209291015488_add-likestatus-to-blog.cs" />
+    <Compile Include="Migrations\202209291015488_add-likestatus-to-blog.designer.cs">
+      <DependentUpon>202209291015488_add-likestatus-to-blog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\AdresBlog.cs" />
     <Compile Include="Models\Sınıflar\Blog.cs" />
+    <Compile Include="Models\Sınıflar\BlogYorum.cs" />
     <Compile Include="Models\Sınıflar\Context.cs" />
     <Compile Include="Models\Sınıflar\Hakkimizda.cs" />
     <Compile Include="Models\Sınıflar\Iletisim.cs" />
@@ -242,6 +248,13 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\BlogDetay.cshtml" />
+    <Content Include="Views\Default\Blog1.cshtml" />
+    <Content Include="Views\Default\OurBestPlaces1.cshtml" />
+    <Content Include="Views\Default\OurBestPlaces2.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\BlogList.cshtml" />
+    <Content Include="Views\Admin\AddBlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -258,6 +271,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202209291015488_add-likestatus-to-blog.resx">
+      <DependentUpon>202209291015488_add-likestatus-to-blog.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
