@@ -4,23 +4,26 @@
     ViewBag.Title = "BlogList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<div class="col-lg-11">
+    <h2>Blog Listesi Sayfası</h2>
 
-<h2>Blog Listesi Sayfası</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Başlık</th>
-        <th>Sil</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+    <table class="table table-bordered">
         <tr>
-            <td>@item.ID</td>
-            <td><a href="/Admin/UpdateBlog/@item.ID">@item.Baslik</a></td>
-            <td><a href="/Admin/DeleteBlog/@item.ID" class="btn btn-danger">Sil</a></td>
-
+            <th class="text-center">ID</th>
+            <th>Başlık</th>
+            <th class="text-center">Sil</th>
+            <th class="col-lg-2 text-center">Web'de Gör</th>
         </tr>
-    }
-</table>
-<td><a href="/Admin/AddBlog/" class="btn btn-primary">Yeni Blog Ekle</a></td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">@item.ID</td>
+                <td><a href="/Admin/UpdateBlog/@item.ID">@item.Baslik</a></td>
+                <td class="text-center"><a href="/Admin/DeleteBlog/@item.ID" class="btn btn-danger">Sil</a></td>
+                <td class="text-center"><a href="/Blog/BlogDetay/@item.ID" class="btn btn-default">Web'de Gör</a></td>
 
+            </tr>
+        }
+    </table>
+    <a href="/Admin/AddBlog/" class="btn btn-primary">Yeni Blog Ekle</a>
+</div>

@@ -14,7 +14,6 @@ namespace TravelTripProject.Controllers
         // GET: Blog
         public ActionResult Index()
         {
-            //var value = c.blogs.ToList();
             by.Deger1 = c.blogs.ToList();
             by.Deger3 = c.blogs.Take(3).OrderByDescending(x=>x.ID).ToList();
             return View(by);
@@ -23,11 +22,25 @@ namespace TravelTripProject.Controllers
         
         public ActionResult BlogDetay(int id)
         {
-            //var blogbul = c.blogs.Where(x => x.ID == id).ToList();
             by.Deger1 = c.blogs.Where(x => x.ID == id).ToList();
+           
             by.Deger2 = c.yorumlars.Where(x => x.BlogID == id).ToList();
             return View(by);
         }
+        [HttpGet]
+        public PartialViewResult YorumYap(int id)
+        {
+            ViewBag.a = id;
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult YorumYap(Yorumlar y)
+        {
+            c.yorumlars.Add(y);
+            c.SaveChanges();
+            return PartialView();
+        }
+
 
 
     }

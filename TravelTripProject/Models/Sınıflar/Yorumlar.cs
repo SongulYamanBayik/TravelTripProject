@@ -15,6 +15,8 @@ namespace TravelTripProject.Models.Sınıflar
         public string Yorum { get; set; }
         public int BlogID { get; set; }
         public virtual Blog Blog { get; set; }
+        public bool Status { get; set; }
+
 
     }
 }

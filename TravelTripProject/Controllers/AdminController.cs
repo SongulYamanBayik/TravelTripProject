@@ -59,5 +59,34 @@ namespace TravelTripProject.Controllers
             return RedirectToAction("BlogList");
         }
 
+        public ActionResult YorumList()
+        {
+            var value = c.yorumlars.ToList();
+            return View(value);
+        }
+        public ActionResult DeleteYorum(int id)
+        {
+            var value = c.yorumlars.Find(id);
+            c.yorumlars.Remove(value);
+            c.SaveChanges();
+            return RedirectToAction("YorumList");
+        }
+        [HttpGet]
+        public ActionResult UpdateYorum(int id)
+        {
+            var value = c.yorumlars.Find(id);
+            return View("UpdateBlog", value);
+        }
+        [HttpPost]
+        public ActionResult UpdateYorum(Yorumlar yorumlar)
+        {
+            var value = c.yorumlars.Find(yorumlar.ID);
+            value.KullaniciAdi = yorumlar.KullaniciAdi;
+            value.Mail = yorumlar.Mail;
+            value.Yorum = yorumlar.Yorum;
+            value.Status = yorumlar.Status;
+            c.SaveChanges();
+            return RedirectToAction("YorumList");
+        }
     }
 }

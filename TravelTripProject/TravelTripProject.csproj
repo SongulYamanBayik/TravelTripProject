@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202209291015488_add-likestatus-to-blog.designer.cs">
       <DependentUpon>202209291015488_add-likestatus-to-blog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210041242344_add-status-to-yorum.cs" />
+    <Compile Include="Migrations\202210041242344_add-status-to-yorum.designer.cs">
+      <DependentUpon>202210041242344_add-status-to-yorum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
     <Compile Include="Models\Sınıflar\AdresBlog.cs" />
@@ -256,6 +260,9 @@
     <Content Include="Views\Admin\BlogList.cshtml" />
     <Content Include="Views\Admin\AddBlog.cshtml" />
     <Content Include="Views\Admin\UpdateBlog.cshtml" />
+    <Content Include="Views\Blog\YorumYap.cshtml" />
+    <Content Include="Views\Admin\YorumList.cshtml" />
+    <Content Include="Views\Admin\UpdateYorum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,6 +283,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202209291015488_add-likestatus-to-blog.resx">
       <DependentUpon>202209291015488_add-likestatus-to-blog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210041242344_add-status-to-yorum.resx">
+      <DependentUpon>202210041242344_add-status-to-yorum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,8 +7,9 @@
 <h2>Blog Güncelleme Sayfası</h2>
 @using (Html.BeginForm("UpdateBlog", "Admin", FormMethod.Post))
 {
+<div class="col-lg-11">
     @Html.LabelFor(x => x.ID)
-    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly="readonly" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
     <br />
     @Html.LabelFor(x => x.Baslik)
     @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
@@ -20,7 +21,7 @@
     @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Aciklama)
-    @Html.TextAreaFor(x => x.Aciklama,15,1, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.Aciklama, 15, 1, new { @class = "form-control" })
     <br />
     <label>
         <input type="checkbox" checked autocomplete="on"> Favorilere Ekle
@@ -29,5 +30,6 @@
     <br />
 
     <button class="btn btn-primary" type="submit">Kaydet</button>
+</div>
 }
 
