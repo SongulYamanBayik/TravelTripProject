@@ -50,10 +50,10 @@ namespace TravelTripProject.Controllers
         public ActionResult UpdateBlog(Blog blog)
         {
             var value = c.blogs.Find(blog.ID);
-            value.Baslik = blog.Baslik;
+            value.Title = blog.Title;
             value.ImageUrl = blog.ImageUrl;
-            value.Tarih = blog.Tarih;
-            value.Aciklama = blog.Aciklama;
+            value.Date = blog.Date;
+            value.Description = blog.Description;
             value.LikeStatus = blog.LikeStatus;
             c.SaveChanges();
             return RedirectToAction("BlogList");
@@ -61,29 +61,29 @@ namespace TravelTripProject.Controllers
 
         public ActionResult YorumList()
         {
-            var value = c.yorumlars.ToList();
+            var value = c.Comments.ToList();
             return View(value);
         }
         public ActionResult DeleteYorum(int id)
         {
-            var value = c.yorumlars.Find(id);
-            c.yorumlars.Remove(value);
+            var value = c.Comments.Find(id);
+            c.Comments.Remove(value);
             c.SaveChanges();
             return RedirectToAction("YorumList");
         }
         [HttpGet]
         public ActionResult UpdateYorum(int id)
         {
-            var value = c.yorumlars.Find(id);
-            return View("UpdateBlog", value);
+            var value = c.Comments.Find(id);
+            return View("UpdateYorum", value);
         }
         [HttpPost]
-        public ActionResult UpdateYorum(Yorumlar yorumlar)
+        public ActionResult UpdateYorum(Comment yorumlar)
         {
-            var value = c.yorumlars.Find(yorumlar.ID);
-            value.KullaniciAdi = yorumlar.KullaniciAdi;
+            var value = c.Comments.Find(yorumlar.ID);
+            value.UserName = yorumlar.UserName;
             value.Mail = yorumlar.Mail;
-            value.Yorum = yorumlar.Yorum;
+            value.CommentDetail = yorumlar.CommentDetail;
             value.Status = yorumlar.Status;
             c.SaveChanges();
             return RedirectToAction("YorumList");

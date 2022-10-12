@@ -1,4 +1,4 @@
-﻿@model TravelTripProject.Models.Sınıflar.Yorumlar
+﻿@model TravelTripProject.Models.Sınıflar.Comment
 @{
     ViewBag.Title = "UpdateYorum";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -11,18 +11,18 @@
         @Html.LabelFor(x => x.ID)
         @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
         <br />
-        @Html.LabelFor(x => x.KullaniciAdi)
-        @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control"})
+        @Html.LabelFor(x => x.UserName)
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control"})
         <br />
         @Html.LabelFor(x => x.Mail)
         @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
         <br />
         
-        @Html.LabelFor(x => x.Yorum)
-        @Html.TextAreaFor(x => x.Yorum, 8, 1, new { @class = "form-control" })
+        @Html.LabelFor(x => x.CommentDetail)
+        @Html.TextAreaFor(x => x.CommentDetail, 8, 1, new { @class = "form-control" })
         <br />
         <label>
-            <input type="checkbox" checked autocomplete="on"> Web'de Göster
+            @Html.CheckBoxFor(x=> x.Status) Web'de Göster
         </label>
         <br />
         <br />

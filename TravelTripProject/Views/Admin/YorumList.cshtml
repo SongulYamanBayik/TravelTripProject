@@ -1,5 +1,5 @@
 ﻿@using TravelTripProject.Models.Sınıflar
-@model List<Yorumlar>
+@model List<Comment>
 @{
     ViewBag.Title = "YorumList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -24,10 +24,10 @@
         {
             <tr>
                 <td class="text-center">@item.ID</td>
-                <td class="text-center">@item.KullaniciAdi</td>
+                <td class="text-center">@item.UserName</td>
                 <td class="text-center">@item.Mail</td>
-                <td class="text-center">@item.Yorum</td>
-                <td class="text-center">@item.Blog.Baslik</td>
+                <td class="text-center">@item.CommentDetail</td>
+                <td class="text-center">@item.Blog.Title</td>
                 <td class="text-center">@item.Status</td>
                 <td class="text-center"><a href="/Admin/DeleteYorum/@item.ID" class="btn btn-danger">Sil</a></td>
                 <td class="text-center"><a href="/Admin/UpdateYorum/@item.ID" class="btn btn-success">Güncelle</a></td>

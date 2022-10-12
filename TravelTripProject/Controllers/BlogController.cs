@@ -10,34 +10,38 @@ namespace TravelTripProject.Controllers
     public class BlogController : Controller
     {
         Context c = new Context();
-        BlogYorum by = new BlogYorum();
+        BlogComment by = new BlogComment();
         // GET: Blog
         public ActionResult Index()
         {
             by.Deger1 = c.blogs.ToList();
             by.Deger3 = c.blogs.Take(3).OrderByDescending(x=>x.ID).ToList();
+
             return View(by);
         }
 
         
         public ActionResult BlogDetay(int id)
         {
-            by.Deger1 = c.blogs.Where(x => x.ID == id).ToList();
-           
-            by.Deger2 = c.yorumlars.Where(x => x.BlogID == id).ToList();
+            by.Deger1 = c.blogs.Where(x => x.ID == id).ToList();           
+            by.Deger2 = c.Comments.Where(x => x.BlogID == id && x.Status == true).ToList();
+
             return View(by);
         }
         [HttpGet]
         public PartialViewResult YorumYap(int id)
         {
             ViewBag.a = id;
+
             return PartialView();
         }
         [HttpPost]
-        public PartialViewResult YorumYap(Yorumlar y)
+        public PartialViewResult YorumYap(Comment y)
         {
-            c.yorumlars.Add(y);
+            c.Comments.Add(y);
+
             c.SaveChanges();
+
             return PartialView();
         }
 

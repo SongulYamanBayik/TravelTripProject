@@ -1,12 +1,12 @@
-﻿@model TravelTripProject.Models.Sınıflar.Yorumlar
+﻿@model TravelTripProject.Models.Sınıflar.Comment
 
 <div class="content-form">
     <h3>Yorum Yaz</h3>
     <form method="post">
-        <input type="text" placeholder="ID" name="BlogID" value="@ViewBag.a" readonly="readonly" required />
-        <input type="text" placeholder="Kullanıcı Adı" name="KullaniciAdi" required />
+        <input type="hidden" placeholder="ID" name="BlogID" value="@ViewBag.a" readonly="readonly"   />
+        <input type="text" placeholder="Kullanıcı Adı" name="UserName" required />
         <input type="text" placeholder="Mail" name="Mail" required />
-        <textarea placeholder="Yorum" name="Yorum"></textarea>
+        <textarea placeholder="Yorum" name="CommentDetail"></textarea>
         <input type="submit" id="gndr" value="Gönder" />
     </form>
     <script>

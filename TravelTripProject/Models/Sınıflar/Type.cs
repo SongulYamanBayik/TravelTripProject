@@ -6,11 +6,12 @@ using System.Web;
 
 namespace TravelTripProject.Models.Sınıflar
 {
-    public class Admin
+    public class Type
     {
-        [Key]
-        public int ID { get; set; }
-        public string USerName { get; set; }
-        public string Password { get; set; }
+        
+        public int TypeID { get; set; }
+        public string TypeName { get; set; }
+        public ICollection<Blog> blogs { get; set; }
+
     }
 }

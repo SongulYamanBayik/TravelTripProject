@@ -7,18 +7,18 @@ namespace TravelTripProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class addlikestatustoblog : IMigrationMetadata
+    public sealed partial class migupdatedatabasename : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addlikestatustoblog));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migupdatedatabasename));
         
         string IMigrationMetadata.Id
         {
-            get { return "202209291015488_add-likestatus-to-blog"; }
+            get { return "202210121050068_mig-update-database-name"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

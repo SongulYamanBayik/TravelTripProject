@@ -1,5 +1,5 @@
 ﻿@using TravelTripProject.Models.Sınıflar
-@model List<Hakkimizda>
+@model List<About>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -21,7 +21,7 @@
                 {
                     <img src="@item.ImageUrl" alt="" />
 
-                    <p>@item.Aciklama</p>
+                    <p>@item.Description</p>
                 }
 
             </div>

@@ -135,23 +135,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202209291015488_add-likestatus-to-blog.cs" />
-    <Compile Include="Migrations\202209291015488_add-likestatus-to-blog.designer.cs">
-      <DependentUpon>202209291015488_add-likestatus-to-blog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202210041242344_add-status-to-yorum.cs" />
-    <Compile Include="Migrations\202210041242344_add-status-to-yorum.designer.cs">
-      <DependentUpon>202210041242344_add-status-to-yorum.cs</DependentUpon>
+    <Compile Include="Migrations\202210121050068_mig-update-database-name.cs" />
+    <Compile Include="Migrations\202210121050068_mig-update-database-name.designer.cs">
+      <DependentUpon>202210121050068_mig-update-database-name.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sınıflar\Admin.cs" />
-    <Compile Include="Models\Sınıflar\AdresBlog.cs" />
+    <Compile Include="Models\Sınıflar\Address.cs" />
     <Compile Include="Models\Sınıflar\Blog.cs" />
-    <Compile Include="Models\Sınıflar\BlogYorum.cs" />
+    <Compile Include="Models\Sınıflar\BlogComment.cs" />
     <Compile Include="Models\Sınıflar\Context.cs" />
-    <Compile Include="Models\Sınıflar\Hakkimizda.cs" />
-    <Compile Include="Models\Sınıflar\Iletisim.cs" />
-    <Compile Include="Models\Sınıflar\Yorumlar.cs" />
+    <Compile Include="Models\Sınıflar\About.cs" />
+    <Compile Include="Models\Sınıflar\Contact.cs" />
+    <Compile Include="Models\Sınıflar\Type.cs" />
+    <Compile Include="Models\Sınıflar\Comment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -281,11 +278,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202209291015488_add-likestatus-to-blog.resx">
-      <DependentUpon>202209291015488_add-likestatus-to-blog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202210041242344_add-status-to-yorum.resx">
-      <DependentUpon>202210041242344_add-status-to-yorum.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210121050068_mig-update-database-name.resx">
+      <DependentUpon>202210121050068_mig-update-database-name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

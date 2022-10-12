@@ -13,7 +13,7 @@ namespace TravelTripProject.Controllers
         // GET: About
         public ActionResult Index()
         {
-            var value = c.hakkimizdas.ToList();
+            var value = c.Abouts.ToList();
             return View(value);
         }
     }
