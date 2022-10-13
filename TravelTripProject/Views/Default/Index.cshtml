@@ -1,10 +1,13 @@
-﻿@using TravelTripProject.Models.Sınıflar
-@model List<Blog>
+﻿@model TravelTripProject.Models.DTO.BlogComment
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
 
+
+@{
+    int sayac = 1;
+}
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -22,12 +25,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="indent" style="height:680px">
                     <br />
                     <h2 class="indent-left margin-bot">Tatil & Seyahat Bloğu</h2>
-                   <br />
+                    <br />
                     <div>
 
                         <div class="slider">
                             <ul class="rslides" id="slider1">
-                                @foreach (var item in Model)
+                                @foreach (var item in Model.Deger3)
                                 {
                                     <li><img src="@item.ImageUrl" alt="" style="height:500px; width:1000px;"></li>
                                 }
@@ -52,62 +55,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <p>Gezmek çok kolay diye çıktığımız bu yolda gezi vlogları ve yurtdışı eğitim olanakları hakkında bilgi alabilir, vize başvurusu hakkında detaylara ulaşabilirsiniz. Günden güne güncellenen ve her gün bir bilgi ile karşınıza çıkan sayfamız ile yolculuğa hazır olun!</p>
 
                 </div>
-                @*<div class="con-bot">
-                        <div class="left">
-                            <div class="bot-left">
-                                <img src="~/Template/web/images/pic.jpg" alt="" />
-                            </div>
-                            <div class="left-text">
-                                <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                                <span class="doller">$1024.99</span>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                                <p><a href="#"><span class="read">Read More >></span></a></p>
-                            </div>
-                        </div>
-                        <div class="left">
-                            <div class="bot-left">
-                                <img src="~/Template/web/images/pic1.jpg" alt="" />
-                            </div>
-                            <div class="left-text">
-                                <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                                <span class="doller">$900.99</span>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                                <p><a href="#"><span class="read">Read More >></span></a></p>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="bot-left">
-                                <img src="~/Template/web/images/pic2.jpg" alt="" />
-                            </div>
-                            <div class="left-text">
-
-                                <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                                <span class="doller">$924.99</span>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                                <p><a href="#"><span class="read">Read More >></span></a></p>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>*@
 
                 @Html.Action("Blog1", "Default")
                 <div class="grids">
                     <div class="box1">
                         <div class="padding">
-                            <h4>This Week's Top 10</h4> @*son 10 turun listesi olsun burası. ders 26-27*@
-                            <ul class="list list-pad">
-                                <li class="list-bg"><span>1.</span><a href="#">formas humanitatis pe</a></li>
-                                <li class="list-bg1"><span>2.</span><a href="#">congue nihil imperdiet</a></li>
-                                <li class="list-bg"><span>3.</span><a href="#">Aadipisicing elit sed do</a></li>
-                                <li class="list-bg1"><span>4.</span><a href="#">luptatum zzril  </a></li>
-                                <li class="list-bg"><span>5.</span><a href="#">Claritas est etiam</a></li>
-                                <li class="list-bg1"><span>6.</span><a href="#">claritatem insitam;</a></li>
-                                <li class="list-bg"><span>7.</span><a href="#">velit esse molestie consequa</a></li>
-                                <li class="list-bg1"><span>8.</span><a href="#">nostrud exerci tation ulla</a></li>
-                                <li class="list-bg"><span>9.</span><a href="#">demonstraverunt lectores</a></li>
-                                <li class="list-bg1"><span>10.</span><a href="#">dolore te feu</a></li>
-                            </ul>
-                            <a href="#" class="link1">See all hotels</a>
+                            <h4>Yılın Rotaları</h4> 
+                        <ul class="list list-pad">
+                            @foreach (var item in Model.Deger3)
+                            {
+                                if (sayac % 2 == 0)
+                                {
+                                    <li class="list-bg1"><span>@sayac.</span><a href="/Blog/BlogDetay/@item.ID">@item.Title.Substring(0,40)</a></li>
+                                }
+                                else
+                                {
+                                    <li class="list-bg"><span>@sayac.</span><a href="/Blog/BlogDetay/@item.ID">@item.Title</a></li>
+                                }
+
+                                sayac++;
+
+                            }
+                        </ul>
+                            <a href="/Route/Index/" class="link1">Daha Fazlası İçin</a>
                         </div>
 
                         @Html.Action("OurBestPlaces1", "Default")

@@ -1,37 +1,52 @@
-﻿<div class="con-bot">
-    <div class="left">
-        <div class="bot-left">
-            <img src="~/Template/web/images/pic.jpg" alt="" />
-        </div>
-        <div class="left-text">
-            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-            <span class="doller">$1024.99</span>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-            <p><a href="#"><span class="read">Read More >></span></a></p>
-        </div>
-    </div>
-    <div class="left">
-        <div class="bot-left">
-            <img src="~/Template/web/images/pic1.jpg" alt="" />
-        </div>
-        <div class="left-text">
-            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-            <span class="doller">$900.99</span>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-            <p><a href="#"><span class="read">Read More >></span></a></p>
-        </div>
-    </div>
-    <div class="right">
-        <div class="bot-left">
-            <img src="~/Template/web/images/pic2.jpg" alt="" />
-        </div>
-        <div class="left-text">
+﻿@using TravelTripProject.Models.DB
+@model List<Blog>
+<div class="con-bot">
+    @foreach (var item in Model)
+    {
+        if (item.ID == 1)
+        {
+            <div class="left">
+                <div class="bot-left">
+                    <img src="@item.ImageUrl" alt="" />
+                </div>
+                <div class="left-text">
 
-            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-            <span class="doller">$924.99</span>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-            <p><a href="#"><span class="read">Read More >></span></a></p>
-        </div>
-    </div>
+                    <h4>@item.Title</h4>
+                    <p>@item.Description.Substring(0, 90)</p>
+                    <p><a href="/Blog/BlogDetay/@item.ID"><span class="read">Daha Fazla >></span></a></p>
+                </div>
+            </div>
+        }
+        else if (item.ID == 2)
+        {
+            <div class="left">
+                <div class="bot-left">
+                    <img src="@item.ImageUrl" alt="" />
+                </div>
+                <div class="left-text">
+
+                    <h4>@item.Title</h4>
+                    <p>@item.Description.Substring(0, 90)</p>
+                    <p><a href="/Blog/BlogDetay/@item.ID"><span class="read">Daha Fazla >></span></a></p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="right">
+                <div class="bot-left">
+                    <img src="@item.ImageUrl" alt="" />
+                </div>
+                <div class="left-text">
+                    <h4>@item.Title</h4>
+                    <p>@item.Description.Substring(0, 90)</p>
+                    <p><a href="/Blog/BlogDetay/@item.ID"><span class="read">Daha Fazla >></span></a></p>
+                </div>
+            </div>
+            <div></div>
+        }
+    }
+
+
     <div class="clear"></div>
 </div>

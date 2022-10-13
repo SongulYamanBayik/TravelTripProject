@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TravelTripProject.Models.Sınıflar;
+using TravelTripProject.Models.DTO;
+using TravelTripProject.Models.DB;
 
 namespace TravelTripProject.Controllers
 {
@@ -14,9 +15,9 @@ namespace TravelTripProject.Controllers
         // GET: Blog
         public ActionResult Index()
         {
-            by.Deger1 = c.blogs.ToList();
-            by.Deger3 = c.blogs.Take(3).OrderByDescending(x=>x.ID).ToList();
-
+            by.Deger1 = c.blogs.Where(x=>x.TypeID==1).ToList();
+            by.Deger3 = c.blogs.Where(x=>x.TypeID==1).Take(3).OrderByDescending(x=>x.ID).ToList();
+            by.Deger4 = c.Comments.Where(x => x.Status == true).Take(3).OrderByDescending(x => x.ID).ToList();
             return View(by);
         }
 
@@ -25,7 +26,8 @@ namespace TravelTripProject.Controllers
         {
             by.Deger1 = c.blogs.Where(x => x.ID == id).ToList();           
             by.Deger2 = c.Comments.Where(x => x.BlogID == id && x.Status == true).ToList();
-
+            by.Deger3 = c.blogs.Take(3).OrderByDescending(x => x.ID).ToList();
+            by.Deger4 = c.Comments.Where(x => x.Status == true).Take(3).OrderByDescending(x => x.ID).ToList();
             return View(by);
         }
         [HttpGet]

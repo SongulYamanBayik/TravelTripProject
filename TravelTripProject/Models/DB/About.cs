@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace TravelTripProject.Models.Sınıflar
+namespace TravelTripProject.Models.DB
 {
     public class About
     {

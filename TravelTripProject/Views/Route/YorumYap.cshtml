@@ -1,0 +1,18 @@
+﻿@model TravelTripProject.Models.DB.Comment
+
+<div class="content-form">
+    <h3>Yorum Yaz</h3>
+    <form method="post">
+        <input type="hidden" placeholder="ID" name="BlogID" value="@ViewBag.a" readonly="readonly" />
+        <input type="text" placeholder="Kullanıcı Adı" name="UserName" required />
+        <input type="text" placeholder="Mail" name="Mail" required />
+        <textarea placeholder="Yorum" name="CommentDetail"></textarea>
+        <input type="submit" id="gndr" value="Gönder" />
+    </form>
+    <script>
+        $('#gndr').click(function () {
+            alert('Yorumunuz Başarılı Bir Şekilde Eklendi. En Kısa Zamanda Yayınlanacak.');
+        });
+    </script>
+</div>
+

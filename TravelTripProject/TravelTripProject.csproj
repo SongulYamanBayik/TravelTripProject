@@ -132,6 +132,8 @@
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -140,15 +142,15 @@
       <DependentUpon>202210121050068_mig-update-database-name.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Sınıflar\Admin.cs" />
-    <Compile Include="Models\Sınıflar\Address.cs" />
-    <Compile Include="Models\Sınıflar\Blog.cs" />
-    <Compile Include="Models\Sınıflar\BlogComment.cs" />
-    <Compile Include="Models\Sınıflar\Context.cs" />
-    <Compile Include="Models\Sınıflar\About.cs" />
-    <Compile Include="Models\Sınıflar\Contact.cs" />
-    <Compile Include="Models\Sınıflar\Type.cs" />
-    <Compile Include="Models\Sınıflar\Comment.cs" />
+    <Compile Include="Models\DB\Admin.cs" />
+    <Compile Include="Models\DB\Address.cs" />
+    <Compile Include="Models\DB\Blog.cs" />
+    <Compile Include="Models\DTO\BlogComment.cs" />
+    <Compile Include="Models\DB\Context.cs" />
+    <Compile Include="Models\DB\About.cs" />
+    <Compile Include="Models\DB\Contact.cs" />
+    <Compile Include="Models\DB\Type.cs" />
+    <Compile Include="Models\DB\Comment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +175,63 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Template\Admin\css\basictable.css" />
+    <Content Include="Template\Admin\css\bootstrap.css" />
+    <Content Include="Template\Admin\css\circles.css" />
+    <Content Include="Template\Admin\css\component.css" />
+    <Content Include="Template\Admin\css\export.css" />
+    <Content Include="Template\Admin\css\flipclock.css" />
+    <Content Include="Template\Admin\css\font-awesome.css" />
+    <Content Include="Template\Admin\css\jQuery-plugin-progressbar1.css" />
+    <Content Include="Template\Admin\css\monthly.css" />
+    <Content Include="Template\Admin\css\style.css" />
+    <Content Include="Template\Admin\css\style_grid.css" />
+    <Content Include="Template\Admin\css\table-style.css" />
+    <Content Include="Template\Admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Template\Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Template\Admin\images\a1.jpg" />
+    <Content Include="Template\Admin\images\a2.jpg" />
+    <Content Include="Template\Admin\images\a3.jpg" />
+    <Content Include="Template\Admin\images\a4.jpg" />
+    <Content Include="Template\Admin\images\admin.jpg" />
+    <Content Include="Template\Admin\images\bottom.jpg" />
+    <Content Include="Template\Admin\images\overlay.png" />
+    <Content Include="Template\Admin\images\pic.jpg" />
+    <Content Include="Template\Admin\images\pic1.jpg" />
+    <Content Include="Template\Admin\images\profile.jpg" />
+    <Content Include="Template\Admin\images\profile_bg.jpg" />
+    <Content Include="Template\Admin\images\progress.jpg" />
+    <Content Include="Template\Admin\js\amcharts.js" />
+    <Content Include="Template\Admin\js\bars.js" />
+    <Content Include="Template\Admin\js\bootstrap-3.1.1.min.js" />
+    <Content Include="Template\Admin\js\Chart.min.js" />
+    <Content Include="Template\Admin\js\circles.js" />
+    <Content Include="Template\Admin\js\classie.js" />
+    <Content Include="Template\Admin\js\contact_me.js" />
+    <Content Include="Template\Admin\js\export.js" />
+    <Content Include="Template\Admin\js\flipclock.js" />
+    <Content Include="Template\Admin\js\gauge.js" />
+    <Content Include="Template\Admin\js\gnmenu.js" />
+    <Content Include="Template\Admin\js\jqBootstrapValidation.js" />
+    <Content Include="Template\Admin\js\jquery-2.1.4.min.js" />
+    <Content Include="Template\Admin\js\jQuery-plugin-progressbar.js" />
+    <Content Include="Template\Admin\js\jquery.basictable.min.js" />
+    <Content Include="Template\Admin\js\jquery.nicescroll.js" />
+    <Content Include="Template\Admin\js\light.js" />
+    <Content Include="Template\Admin\js\modernizr.custom.js" />
+    <Content Include="Template\Admin\js\monthly.js" />
+    <Content Include="Template\Admin\js\pie.js" />
+    <Content Include="Template\Admin\js\prettymaps.js" />
+    <Content Include="Template\Admin\js\radar.js" />
+    <Content Include="Template\Admin\js\screenfull.js" />
+    <Content Include="Template\Admin\js\scripts.js" />
+    <Content Include="Template\Admin\js\serial.js" />
+    <Content Include="Template\Admin\js\skycons.js" />
+    <Content Include="Template\Admin\js\valida.2.1.6.min.js" />
+    <Content Include="Template\Admin\js\validator.min.js" />
+    <Content Include="Template\Admin\js\xy.js" />
+    <Content Include="Template\Admin\main-page.html" />
+    <Content Include="Template\Admin\signin.html" />
     <Content Include="Template\web2\about.html" />
     <Content Include="Template\web2\contact.html" />
     <Content Include="Template\web2\css\bootstrap.css" />
@@ -260,6 +319,21 @@
     <Content Include="Views\Blog\YorumYap.cshtml" />
     <Content Include="Views\Admin\YorumList.cshtml" />
     <Content Include="Views\Admin\UpdateYorum.cshtml" />
+    <Content Include="Views\Route\Index.cshtml" />
+    <Content Include="Views\Route\Detay.cshtml" />
+    <Content Include="Views\Route\YorumYap.cshtml" />
+    <Content Include="Template\Admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Template\Admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Template\Admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Template\Admin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Template\Admin\fonts\FontAwesome.otf" />
+    <Content Include="Template\Admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Template\Admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Template\Admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Template\Admin\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Template\Admin\images\Thumbs.db" />
+    <Content Include="Template\Admin\js\js" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

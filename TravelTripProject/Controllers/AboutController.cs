@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TravelTripProject.Models.Sınıflar;
+using TravelTripProject.Models.DB;
 
 namespace TravelTripProject.Controllers
 {

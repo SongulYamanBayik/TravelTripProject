@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace TravelTripProject.Models.Sınıflar
+namespace TravelTripProject.Models.DB
 {
     public class Context: DbContext
     {

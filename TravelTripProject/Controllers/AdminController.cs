@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TravelTripProject.Models.Sınıflar;
+using TravelTripProject.Models.DB;
 
 namespace TravelTripProject.Controllers
 {
+    [Authorize]
+
     public class AdminController : Controller
     {
         // GET: Admin
         Context c = new Context();
         public ActionResult Index()
         {
+            ViewBag.a = c.blogs.Where(x=>x.TypeID==1).Count();
+            ViewBag.b = c.Comments.Count();
+            ViewBag.c = c.blogs.Where(x => x.TypeID == 2).Count();
+            ViewBag.d = c.Comments.Where(x => x.Status == true).Count();
             return View();
         }
         public ActionResult BlogList()
